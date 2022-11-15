@@ -5,12 +5,22 @@
 @section('content')
 
 <div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-info" onclick="window.print()">طباعة</button>
+    </div>
+
+</div>
+
+<br>
+<br>
+
+<div class="row">
     <!-- passport -->
     <div class="col-md-12">
         <!-- general form elements disabled -->
         <div class="card card-info">
             <div class="card-header">
-            <h3 class="card-title" style="float: right;">بينات جواز السفر</h3>
+            <h3 class="card-title" style="float: right;">حالة الطلب  </h3>
             </div>
 
 
@@ -91,6 +101,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="row">
               <div class="col-sm-12">
                 <!-- text input -->
@@ -199,53 +211,64 @@
       <!-- /.card -->
 
           <!-- paprse and docs -->
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-              <h3 class="card-title" style="float: right;"> الملفات و المستندات</h3><br/>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example2" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th>نوع الملف</th>
-                    <th>مشاهدة</th>
-                    <th>تحميل</th>
-                </tr>
-                </thead>
-                <tbody>
 
-                @foreach ($files as $file)
+
+
+@isset($files)
+
+
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                <h3 class="card-title" style="float: right;"> الملفات و المستندات</h3><br/>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                <table id="example2" class="table table-bordered table-striped">
+                    <thead>
                     <tr>
-                        <td>{{ $file->type }}</td>
-                        <td>
-                            <a class="btn btn-info" href="{{ $file->file }}">مشاهدة</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-info" href="{{ $file->file }}">تحميل</a>
-                        </td>
+                        <th>نوع الملف</th>
+                        <th>مشاهدة</th>
+                        <th>تحميل</th>
                     </tr>
+                    </thead>
+                    <tbody>
+
+                    @foreach ($files as $file)
+                        <tr>
+                            <td>{{ $file->type }}</td>
+                            <td>
+                                <a class="btn btn-info" href="{{ $file->file }}">مشاهدة</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-info" href="{{ $file->file }}">تحميل</a>
+                            </td>
+                        </tr>
 
 
-                    @endforeach
+                        @endforeach
 
-                </tbody>
-                <tfoot>
-                <tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
 
-                    <th>نوع الملف</th>
-                    <th>مشاهدة</th>
-                    <th>تحميل</th>
-                </tr>
-                </tfoot>
-              </table>
+                        <th>نوع الملف</th>
+                        <th>مشاهدة</th>
+                        <th>تحميل</th>
+                    </tr>
+                    </tfoot>
+                </table>
+                </div>
+                <!-- /.card-body -->
             </div>
-            <!-- /.card-body -->
+            <!-- /.card -->
         </div>
-          <!-- /.card -->
-    </div>
-        <!-- end papers and docs -->
+            <!-- end papers and docs -->
+@endisset
+
+@isset($details)
+
 
     <!-- home service -->
     <div class="col-md-12">
@@ -347,6 +370,8 @@
             <!-- /.card-body -->
     </div>
     <!-- end passport -->
+
+@endisset
 
     @foreach ($fams as $fam)
 

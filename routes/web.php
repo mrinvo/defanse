@@ -79,6 +79,8 @@ Route::prefix('/dashboard')->name('admin.')->group(function (){
         Route::get('/clerk/details/{id}',[ClerkController::class,'details'])->name('clerk.details');
         Route::post('/clerk/status',[ClerkController::class,'status'])->name('clerk.status');
 
+        Route::get('/clerk/details/print',[ClerkController::class,'print'])->name('clerk.print');
+
         //end jops routes
 
 

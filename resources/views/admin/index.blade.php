@@ -30,14 +30,14 @@ if ( Config::get('app.locale') == 'ar'){
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>{{ $jops->count() }}</h3>
+            <h3>{{ $new->count() }}</h3>
 
             <p> الطلبات الجديدة</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="{{ route('admin.jop.index') }}" class="small-box-footer">كل الطلبات الجديدة <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.clerk.new') }}" class="small-box-footer">كل الطلبات الجديدة <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -45,14 +45,14 @@ if ( Config::get('app.locale') == 'ar'){
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>{{ $jops->count() }}</h3>
+            <h3>{{ $pending->count() }}</h3>
 
             <p>  طلبات تحت المراجعة</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="{{ route('admin.jop.index') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.clerk.pending') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -60,14 +60,14 @@ if ( Config::get('app.locale') == 'ar'){
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>{{ $jops->count() }}</h3>
+            <h3>{{ $accepted->count() }}</h3>
 
             <p>  طلبات  مقبولة</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="{{ route('admin.jop.index') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.clerk.accepted') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -76,14 +76,14 @@ if ( Config::get('app.locale') == 'ar'){
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>{{ $jops->count() }}</h3>
+            <h3>{{ $rejected->count() }}</h3>
 
             <p>  طلبات  مرفوضة</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="{{ route('admin.jop.index') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.clerk.rejected') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->

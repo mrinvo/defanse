@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Verfication;
 use Illuminate\Contracts\Filesystem\Cloud;
 use Illuminate\Support\Carbon;
+use PDF;
 
 class ClerkController extends Controller
 {
@@ -220,4 +221,6 @@ class ClerkController extends Controller
         return redirect()->back();
 
     }
+
+
 }

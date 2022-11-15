@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\clerk;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,16 @@ class HomeController extends Controller
     public function home(){
         $jops = Jop::all();
 
+        $new = Clerk::where('status','new')->get();
 
-        return view('admin.index',compact('jops'));
+        $pending = Clerk::where('status','pending')->get();
+
+        $rejected = Clerk::where('status','rejected')->get();
+
+        $accepted = Clerk::where('status','accepted')->get();
+
+
+
+        return view('admin.index',compact('jops','new','pending','rejected','accepted'));
     }
 }
