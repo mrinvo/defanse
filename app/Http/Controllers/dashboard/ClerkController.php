@@ -224,21 +224,21 @@ class ClerkController extends Controller
 
     public function new(){
 
-        $clerks = Clerk::where('status','new')->sortDesc();
+        $clerks = Clerk::where('status','new')->get()->sortDesc();
         return view('admin.clerks.index',compact('clerks'));
 
     }
 
     public function pending(){
 
-        $clerks = Clerk::where('status','pending')->sortDesc();
+        $clerks = Clerk::where('status','pending')->get()->sortDesc();
         return view('admin.clerks.index',compact('clerks'));
 
     }
 
     public function rejected(){
 
-        $clerks = Clerk::where('status','rejected')->sortDesc();
+        $clerks = Clerk::where('status','rejected')->get()->sortDesc();
         return view('admin.clerks.index',compact('clerks'));
 
     }
@@ -246,7 +246,7 @@ class ClerkController extends Controller
 
     public function accepted(){
 
-        $clerks = Clerk::where('status','rejected')->sortDesc();
+        $clerks = Clerk::where('status','accepted')->get()->sortDesc();
         return view('admin.clerks.index',compact('clerks'));
 
     }
