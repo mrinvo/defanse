@@ -38,8 +38,8 @@
                     <select  name="status" class="form-control">
                         <option {{ ($clerk->status == 'new' ? 'selected' : '') }} value="new">جديد</option>
                         <option  {{ ($clerk->status == 'pending' ? 'selected' : '') }}  value="pending">تحت المراجعة</option>
-                        <option  {{ ($clerk->status == 'rejected' ? 'selected' : '') }}  value="rejected">تم القبول</option>
-                        <option  {{ ($clerk->status == 'accepted' ? 'selected' : '') }}  value="accepted">تم الرفض</option>
+                        <option  {{ ($clerk->status == 'rejected' ? 'selected' : '') }}  value="accepted">تم القبول</option>
+                        <option  {{ ($clerk->status == 'accepted' ? 'selected' : '') }}  value="rejected">تم الرفض</option>
                     </select>
                     </div>
                 </div>
