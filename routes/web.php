@@ -83,7 +83,7 @@ Route::prefix('/dashboard')->name('admin.')->group(function (){
         Route::post('/clerk/index/rejected',[ClerkController::class,'rejected'])->name('clerk.index.rejected');
         Route::post('/clerk/index/accepted',[ClerkController::class,'accepted'])->name('clerk.index.accepted');
 
-        Route::get('/clerk/details/print',[ClerkController::class,'print'])->name('clerk.print');
+
 
         //end jops routes
 
