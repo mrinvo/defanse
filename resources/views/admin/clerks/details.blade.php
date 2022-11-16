@@ -457,7 +457,7 @@
                         <div class="col-sm-6">
                             <!-- text input -->
                             <div class="form-group">
-                            <label>اسم الاب بالكامل</label>
+                            <label>اسم الام بالكامل</label>
                             <input disabled value="{{ $fam->name }}" type="text" class="form-control" name="name" placeholder="Enter ...">
                             </div>
                         </div>
