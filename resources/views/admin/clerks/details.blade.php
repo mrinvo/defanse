@@ -256,7 +256,7 @@
                             </td>
                             <td>
                                 <button class="btn btn-info" onclick="window.open('{{ $file->file }}').print()">تحميل</button>
-                                <a class="btn btn-info"  href="{{ $file->file }}">تحميل</a>
+
                             </td>
                         </tr>
 
@@ -536,13 +536,13 @@
                     <!-- /.card-body -->
             </div>
 
-        @elseif($fam->relation_type == 'father_aunt')
+        @elseif($fam->relation_type == 'mother_aunt')
 
             <div class="col-md-12">
                 <!-- general form elements disabled -->
                 <div class="card card-info">
                     <div class="card-header">
-                    <h3 class="card-title" style="float: right;">  معلومات العمات والخالات</h3>
+                    <h3 class="card-title" style="float: right;">  معلومات الخال والخالات </h3>
                     </div>
 
 
