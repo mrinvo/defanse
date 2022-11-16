@@ -35,7 +35,7 @@ Route::group(['prefix' => 'v1' ,'middleware' => 'lang'], function () {
 
 
     //JOP
-     Route::get('/jop/index',[JopController::class,'index'])
+     Route::get('/jop/index',[JopController::class,'index']);
     //END JOP
 
 
