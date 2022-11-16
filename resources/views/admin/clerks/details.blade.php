@@ -506,7 +506,7 @@
                         <div class="col-sm-6">
                             <!-- text input -->
                             <div class="form-group">
-                            <label>اسم الاب بالكامل</label>
+                            <label>اسم العم او العمة</label>
                             <input disabled value="{{ $fam->name }}" type="text" class="form-control" name="name" placeholder="Enter ...">
                             </div>
                         </div>
@@ -555,7 +555,7 @@
                         <div class="col-sm-6">
                             <!-- text input -->
                             <div class="form-group">
-                            <label>اسم الاب بالكامل</label>
+                            <label>اسم الخال و الخالة بالكامل</label>
                             <input disabled value="{{ $fam->name }}" type="text" class="form-control" name="name" placeholder="Enter ...">
                             </div>
                         </div>
