@@ -237,12 +237,26 @@
 
                     @foreach ($files as $file)
                         <tr>
-                            <td>{{ $file->type }}</td>
+                            <td>
+                               @if($file->type == 'id')
+                                صورة الهوية
+                               @elseif ($file->type == 'pass')
+                                صورة جواز السفر
+                                @elseif ($file->type == 'education')
+                                المؤهل العلمي
+                                @elseif($file->type == 'service')
+                                الخدمة الوطنية
+                                @elseif($file->type == 'qualifier')
+                                خلاصة القيد
+
+                               @endif
+                            </td>
                             <td>
                                 <a class="btn btn-info" href="{{ $file->file }}">مشاهدة</a>
                             </td>
                             <td>
-                                <a class="btn btn-info" href="{{ $file->file }}">تحميل</a>
+                                <button class="btn btn-info" onclick="window.open('{{ $file->file }}').print()">تحميل</button>
+                                <a class="btn btn-info"  href="{{ $file->file }}">تحميل</a>
                             </td>
                         </tr>
 
