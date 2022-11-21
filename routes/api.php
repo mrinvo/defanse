@@ -41,9 +41,10 @@ Route::group(['prefix' => 'v1' ,'middleware' => 'lang'], function () {
 
     //clerk
 
-        Route::post('/clerk/storeclerk',[ClerkController::class,'storeclerk']);
-        Route::post('/clerk/verify',[ClerkController::class,'verify']);
-
+    Route::post('/clerk/storeclerk',[ClerkController::class,'storeclerk']);
+    Route::post('/clerk/verify',[ClerkController::class,'verify']);
+    Route::post('/clerk/storeclerk/{id}',[ClerkController::class,'details']);
+    Route::post('/clerk/file/{id}',[ClerkController::class,'file']);
     //end clerk
 
 
