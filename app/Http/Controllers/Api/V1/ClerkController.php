@@ -20,7 +20,7 @@ class ClerkController extends Controller
         $request->validate([
             'name' => 'required|max:250',
             'phone' => 'required|numeric',
-            'emirate' => 'required|in:Dubai,Abu_Dhabi','Sharjah','Ajman','Umm_Al_Quwain','Fujairah','Ras_Al_Khaimah',
+            'emirate' => 'required|in:1,2,3,4,5,6,7',
             'education' => 'required|max:250',
             'dop' => 'required|date',
             'jop_id' => 'required',
