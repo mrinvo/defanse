@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\V1\AddressController;
 use App\Http\Controllers\Api\V1\CartController;
 use App\Http\Controllers\Api\V1\CategoyController;
 use App\Http\Controllers\Api\V1\CleaningController;
+use App\Http\Controllers\Api\V1\ClerkController;
 use App\Http\Controllers\Api\V1\DebtsController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\HomeController;
@@ -37,6 +38,13 @@ Route::group(['prefix' => 'v1' ,'middleware' => 'lang'], function () {
     //JOP
      Route::get('/jop/index',[JopController::class,'index']);
     //END JOP
+
+    //clerk
+
+        Route::post('/jop/clerk/storeclerk',[ClerkController::class,'storeclerk']);
+        Route::post('/jop/clerk/verify',[ClerkController::class,'verify']);
+
+    //end clerk
 
 
 

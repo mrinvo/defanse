@@ -11,7 +11,7 @@ class JopController extends Controller
     public function index(){
         $jops = Jop::select([
             'id',
-            'name_'.app()->getLocale(),
+            'name_'.app()->getLocale() .' as name',
 
         ])->get();
 
