@@ -205,7 +205,7 @@ class ClerkController extends Controller
 
        $file =  File::create([
             'file' =>  asset('storage/'.$file_path),
-            'type' => $request->file_type,
+            'type' => $request->type,
             'clerk_id' => $id,
         ]);
 
