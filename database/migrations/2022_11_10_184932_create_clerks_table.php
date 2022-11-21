@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('jop_id')->constrained('jops');
             $table->string('name');
-            $table->enum('emirate',['1','2','3','4','5','6','7']);
+            $table->integer('emirate');
             $table->string('education');
             $table->date('dob');
             $table->string('phone');
