@@ -54,7 +54,7 @@ class ClerkController extends Controller
         $response = [
             'message' =>  trans('api.fetch'),
             'data' => $clerk,
-            'otp code' => $vf_code,
+            'otp code' => $vf_code->otp_code,
 
         ];
 
@@ -109,8 +109,14 @@ class ClerkController extends Controller
             $user->save();
 
 
+            $response = [
+                'message' =>  trans('api.emailverified'),
+                'data' => $user,
 
-            return redirect()->route('admin.clerk.edit',$otp->clerk_id);
+
+            ];
+
+            return response();
 
 
         }else{
