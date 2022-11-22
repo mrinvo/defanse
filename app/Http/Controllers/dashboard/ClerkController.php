@@ -228,21 +228,21 @@ class ClerkController extends Controller
         ->where('status','new')
         ->where('verified',1)
         ->get()->sortDesc();
-        return view('admin.clerks.index',compact('clerks'));
+        return view('admin.clerks.new',compact('clerks'));
 
     }
 
     public function pending(){
 
         $clerks = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','pending')->get()->sortDesc();
-        return view('admin.clerks.index',compact('clerks'));
+        return view('admin.clerks.pending',compact('clerks'));
 
     }
 
     public function rejected(){
 
         $clerks =  Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','rejected')->get()->sortDesc();
-        return view('admin.clerks.index',compact('clerks'));
+        return view('admin.clerks.rejected',compact('clerks'));
 
     }
 
@@ -250,7 +250,7 @@ class ClerkController extends Controller
     public function accepted(){
 
         $clerks = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','accepted')->get()->sortDesc();
-        return view('admin.clerks.index',compact('clerks'));
+        return view('admin.clerks.accepted',compact('clerks'));
 
     }
 
