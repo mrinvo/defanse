@@ -75,10 +75,10 @@ Route::prefix('/dashboard')->name('admin.')->group(function (){
         Route::get('/clerk/details/{id}',[ClerkController::class,'details'])->name('clerk.details');
         Route::post('/clerk/status',[ClerkController::class,'status'])->name('clerk.status');
 
-        Route::post('/clerk/index/new',[ClerkController::class,'new'])->name('clerk.index.new');
-        Route::post('/clerk/index/pending',[ClerkController::class,'pending'])->name('clerk.index.pending');
-        Route::post('/clerk/index/rejected',[ClerkController::class,'rejected'])->name('clerk.index.rejected');
-        Route::post('/clerk/index/accepted',[ClerkController::class,'accepted'])->name('clerk.index.accepted');
+        Route::get('/clerk/index/new',[ClerkController::class,'new'])->name('clerk.index.new');
+        Route::get('/clerk/index/pending',[ClerkController::class,'pending'])->name('clerk.index.pending');
+        Route::get('/clerk/index/rejected',[ClerkController::class,'rejected'])->name('clerk.index.rejected');
+        Route::get('/clerk/index/accepted',[ClerkController::class,'accepted'])->name('clerk.index.accepted');
 
 
 
