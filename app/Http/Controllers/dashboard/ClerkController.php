@@ -224,7 +224,7 @@ class ClerkController extends Controller
 
     public function new(){
 
-        Clerk::has('detail')->has('files')->has('families')
+        $clerks = Clerk::has('detail')->has('files')->has('families')
         ->where('status','new')
         ->where('verified',1)
         ->get()->sortDesc();

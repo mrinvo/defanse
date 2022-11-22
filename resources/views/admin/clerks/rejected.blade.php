@@ -1,6 +1,6 @@
 @extends('admin.master.masterar')
 @section('name')
-الطلبات
+طلبات مرفوضة
 @endsection
 @section('content')
 <div class="row">
