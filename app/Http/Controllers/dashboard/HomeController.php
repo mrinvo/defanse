@@ -19,7 +19,10 @@ class HomeController extends Controller
     public function home(){
         $jops = Jop::all();
 
-        $new = Clerk::where('status','new')->wherehas('detail','family','file')->get();
+        $new = Clerk::wherehas('detail','family','file')
+        ->where('status','new')
+        ->where('verified',1)
+        ->get();
 
         $pending = Clerk::where('status','pending')->get();
 
