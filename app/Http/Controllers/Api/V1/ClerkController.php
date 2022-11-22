@@ -166,7 +166,7 @@ class ClerkController extends Controller
 
         ]);
 
-        $details = Detail::create([
+        $d = Detail::create([
 
             'mil_no' => $request->request->mil_no,
             'mil_batch_no' => $request->mil_batch_no,
@@ -179,6 +179,8 @@ class ClerkController extends Controller
             'clerk_id' => $id,
 
         ]);
+
+        dd($d);
 
         foreach($request->family as $fam){
             Family::create([
