@@ -74,36 +74,31 @@
             <ul class="nav nav-treeview">
 
               </li>
-              <li class="nav-item">
-                <a href="{{ route('admin.clerk.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> جميع الطلبات</p>
-                </a>
-              </li>
+
 
               <li class="nav-item">
-                <a href="{{ route('admin.clerk.new') }}" class="nav-link">
+                <a href="{{ route('admin.clerk.index.new') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>طلبات جديدة</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="{{ route('admin.clerk.pending') }}" class="nav-link">
+                <a href="{{ route('admin.clerk.index.pending') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> طلبات تحت المراجعة</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="{{ route('admin.clerk.accepted') }}" class="nav-link">
+                <a href="{{ route('admin.clerk.index.accepted') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> طلبات مقبولة</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="{{ route('admin.clerk.rejected') }}" class="nav-link">
+                <a href="{{ route('admin.clerk.index.rejected') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p> طلبات مرفوضة</p>
                 </a>
