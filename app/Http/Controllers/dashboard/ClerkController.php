@@ -195,7 +195,7 @@ class ClerkController extends Controller
         $det->delete();
         $files = File::where('clerk_id',$id)->get();
         foreach($files as $file){
-            unlink($file->file);
+            unlink(realpath($file->file));
             $file->delete();
         }
 
