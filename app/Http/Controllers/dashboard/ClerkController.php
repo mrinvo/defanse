@@ -189,11 +189,25 @@ class ClerkController extends Controller
     public function delete($id){
 
 
-
-
         $cat = Clerk::findOrFail($id);
+        if($cat){
+        $det = Detail::where('clerk_id',$id)->first();
+        $det->delete();
+        $files = File::where('clerk_id',$id)->get();
+        foreach($files as $file){
+            unlink($file->file);
+            $file->delete();
+        }
+
+        $fams = Family::where('clerk_id',$id)->get();
+        foreach($fams as $fam){
+            $fam->delete();
+        }
+
+
 
         $cat->delete();
+    }
         return redirect()->route('admin.clerk.index');
 
 
