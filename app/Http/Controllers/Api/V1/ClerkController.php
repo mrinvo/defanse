@@ -183,9 +183,10 @@ class ClerkController extends Controller
 
         ]);
 
-dd($request->family);
+
 
         foreach($request->family as $fam){
+            dd($fam);
             Family::create([
                 'clerk_id' => $id,
                 'relation_type' => $fam->relation_type,
