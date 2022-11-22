@@ -24,11 +24,11 @@ class HomeController extends Controller
         ->where('verified',1)
         ->get();
 
-        $pending = Clerk::where('status','pending')->get();
+        $pending = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','pending')->get();
 
-        $rejected = Clerk::where('status','rejected')->get();
+        $rejected = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','rejected')->get();
 
-        $accepted = Clerk::where('status','accepted')->get();
+        $accepted = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','accepted')->get();
 
 
 

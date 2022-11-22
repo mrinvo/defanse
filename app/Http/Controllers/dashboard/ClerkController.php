@@ -142,50 +142,50 @@ class ClerkController extends Controller
 
     }
 
-    public function update(Request $request){
+    // public function update(Request $request){
 
-        $request->validate([
+    //     $request->validate([
 
-            'name_en' => 'required|max:150',
-            'name_ar'=> 'required|max:150',
-            'description_en'=> 'max:500',
-            'description_ar'=> 'max:500',
-            'price'=> 'required',
-            'have_discount'=> 'boolean',
-            'discounted_price'=> '',
-            'category_id'=> 'required|exists:categories,id',
+    //         'name_en' => 'required|max:150',
+    //         'name_ar'=> 'required|max:150',
+    //         'description_en'=> 'max:500',
+    //         'description_ar'=> 'max:500',
+    //         'price'=> 'required',
+    //         'have_discount'=> 'boolean',
+    //         'discounted_price'=> '',
+    //         'category_id'=> 'required|exists:categories,id',
 
-        ]);
+    //     ]);
 
-        $cat =  Product::findOrFail($request->id);
-        $isfish = ($request->category_id == 1) ? true : false;
-
-
-
-        $cat->update([
-            'name_en' => $request->name_en,
-            'name_ar'=> $request->name_ar,
-            'description_en'=> $request->description_en,
-            'description_ar'=> $request->description_ar,
-            'price'=> $request->price,
-            'have_discount'=> $request->have_discount,
-            'discounted_price'=> $request->discounted_price,
-            'isfish' => $isfish,
-            'category_id'=> $request->category_id,
+    //     $cat =  Product::findOrFail($request->id);
+    //     $isfish = ($request->category_id == 1) ? true : false;
 
 
-        ]);
 
-        if($request->file('img')){
-            $image_path = $request->file('img')->store('api/products','public');
-            $cat->img = asset('storage/'.$image_path);
-            $cat->save();
-        }
+    //     $cat->update([
+    //         'name_en' => $request->name_en,
+    //         'name_ar'=> $request->name_ar,
+    //         'description_en'=> $request->description_en,
+    //         'description_ar'=> $request->description_ar,
+    //         'price'=> $request->price,
+    //         'have_discount'=> $request->have_discount,
+    //         'discounted_price'=> $request->discounted_price,
+    //         'isfish' => $isfish,
+    //         'category_id'=> $request->category_id,
 
-        return redirect()->route('admin.product.index');
+
+    //     ]);
+
+    //     if($request->file('img')){
+    //         $image_path = $request->file('img')->store('api/products','public');
+    //         $cat->img = asset('storage/'.$image_path);
+    //         $cat->save();
+    //     }
+
+    //     return redirect()->route('admin.product.index');
 
 
-    }
+    // }
     public function delete($id){
 
 
@@ -224,21 +224,24 @@ class ClerkController extends Controller
 
     public function new(){
 
-        $clerks = Clerk::where('status','new')->get()->sortDesc();
+        Clerk::has('detail')->has('files')->has('families')
+        ->where('status','new')
+        ->where('verified',1)
+        ->get()->sortDesc();
         return view('admin.clerks.index',compact('clerks'));
 
     }
 
     public function pending(){
 
-        $clerks = Clerk::where('status','pending')->get()->sortDesc();
+        $clerks = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','pending')->get()->sortDesc();
         return view('admin.clerks.index',compact('clerks'));
 
     }
 
     public function rejected(){
 
-        $clerks = Clerk::where('status','rejected')->get()->sortDesc();
+        $clerks =  Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','rejected')->get()->sortDesc();
         return view('admin.clerks.index',compact('clerks'));
 
     }
@@ -246,7 +249,7 @@ class ClerkController extends Controller
 
     public function accepted(){
 
-        $clerks = Clerk::where('status','accepted')->get()->sortDesc();
+        $clerks = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','accepted')->get()->sortDesc();
         return view('admin.clerks.index',compact('clerks'));
 
     }
