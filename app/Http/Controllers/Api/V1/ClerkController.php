@@ -183,7 +183,7 @@ class ClerkController extends Controller
 
         ]);
 
-
+dd($request->family);
 
         foreach($request->family as $fam){
             Family::create([
