@@ -37,7 +37,7 @@ if ( Config::get('app.locale') == 'ar'){
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="{{ route('admin.clerk.new') }}" class="small-box-footer">كل الطلبات الجديدة <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.clerk.index.new') }}" class="small-box-footer">كل الطلبات الجديدة <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -52,7 +52,7 @@ if ( Config::get('app.locale') == 'ar'){
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="{{ route('admin.clerk.pending') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.clerk.index.pending') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -67,7 +67,7 @@ if ( Config::get('app.locale') == 'ar'){
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="{{ route('admin.clerk.accepted') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.clerk.index.accepted') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -83,7 +83,7 @@ if ( Config::get('app.locale') == 'ar'){
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="{{ route('admin.clerk.rejected') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.clerk.index.rejected') }}" class="small-box-footer">  <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
