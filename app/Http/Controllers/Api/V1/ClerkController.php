@@ -186,13 +186,13 @@ class ClerkController extends Controller
 
 
         foreach($request->family as $fam){
-            dd($fam->relation_type);
+
             Family::create([
                 'clerk_id' => $id,
-                'relation_type' => $fam[0],
-                'name' => $fam->name,
-                'work' => $fam->work,
-                'nationality' => $fam->nationality,
+                'relation_type' => $fam['relation_type'],
+                'name' => $fam['name'],
+                'work' => $fam['work'],
+                'nationality' => $fam['nationality'],
             ]);
         }
 
