@@ -65,10 +65,6 @@ Route::prefix('/dashboard')->name('admin.')->group(function (){
         //jops routes
 
         Route::get('/clerk/index',[ClerkController::class,'index'])->name('clerk.index');
-        Route::get('/clerk/index/new',[ClerkController::class,'index'])->name('clerk.new');
-        Route::get('/clerk/index/pending',[ClerkController::class,'index'])->name('clerk.pending');
-        Route::get('/clerk/index/accepted',[ClerkController::class,'index'])->name('clerk.accepted');
-        Route::get('/clerk/index/rejected',[ClerkController::class,'index'])->name('clerk.rejected');
         Route::get('/clerk/create',[ClerkController::class,'createclerk'])->name('clerk.create');
         Route::post('/clerk/store',[ClerkController::class,'storeclerk'])->name('clerk.store');
         Route::get('/clerk/send/{code}',[ClerkController::class,'send'])->name('clerk.send');
