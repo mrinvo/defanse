@@ -141,8 +141,10 @@ class ClerkController extends Controller
             'mil_no' => 'required',
             'mil_batch_no' => 'required',
             'id_no' => 'required',
+
             'id_export_no' => 'required',
             'id_expire_no' => 'required',
+            'pass_no'=> 'required',
             'pass_export_no' => 'required',
             'pass_expire_no' => 'required',
 
@@ -173,6 +175,7 @@ class ClerkController extends Controller
             'id_no' => $request->id_no,
             'id_export_no' => $request->id_export_no,
             'id_expire_no' => $request->id_expire_no,
+            'pass_no' => $request->pass_no,
             'pass_export_no' => $request->pass_export_no,
             'pass_expire_no' => $request->pass_expire_no,
             'notes' => $request->notes,
