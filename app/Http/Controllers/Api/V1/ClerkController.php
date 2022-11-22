@@ -168,7 +168,7 @@ class ClerkController extends Controller
 
         $d = Detail::create([
 
-            'mil_no' => $request->request->mil_no,
+            'mil_no' => $request->mil_no,
             'mil_batch_no' => $request->mil_batch_no,
             'id_no' => $request->id_no,
             'id_export_no' => $request->id_export_no,
