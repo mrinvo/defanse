@@ -17,6 +17,9 @@ class clerk extends Model
     public function files(){
         return $this->hasMany(File::class);
     }
+    public function families(){
+        return $this->hasMany(Family::class);
+    }
 
     public function jop(){
         return $this->belongsTo(Jop::class);
