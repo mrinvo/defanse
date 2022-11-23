@@ -1,3 +1,18 @@
+@php
+$jops = Jop::all();
+
+$new = Clerk::has('detail')->has('files')->has('families')
+->where('status','new')
+->where('verified',1)
+->get();
+
+$pending = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','pending')->get();
+
+$rejected = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','rejected')->get();
+
+$accepted = Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','accepted')->get();
+@endphp
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
@@ -11,7 +26,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/dashboard/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          {{-- <img src="/dashboard/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> --}}
         </div>
         <div class="info">
           <a href="#" class="d-block">Admin </a>
@@ -40,7 +55,7 @@
               <p>
                      الوظائف
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right">{{ $jops->count }}</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -68,7 +83,7 @@
               <p>
                      الطلبات
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right">{{ $new->count() }}</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
