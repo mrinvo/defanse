@@ -142,6 +142,8 @@ class ClerkController extends Controller
 
     }
 
+
+
     // public function update(Request $request){
 
     //     $request->validate([
@@ -194,21 +196,20 @@ class ClerkController extends Controller
         $det = Detail::where('clerk_id',$id)->first();
         $det->delete();
         $files = File::where('clerk_id',$id)->get();
-        foreach($files as $file){
+            foreach($files as $file){
 
 
-            $file->delete();
+                $file->delete();
+            }
+
+            $fams = Family::where('clerk_id',$id)->get();
+            foreach($fams as $fam){
+                $fam->delete();
+            }
+
+
+            $cat->delete();
         }
-
-        $fams = Family::where('clerk_id',$id)->get();
-        foreach($fams as $fam){
-            $fam->delete();
-        }
-
-
-
-        $cat->delete();
-    }
         return redirect()->back();
 
 

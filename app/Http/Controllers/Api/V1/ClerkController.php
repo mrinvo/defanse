@@ -27,10 +27,13 @@ class ClerkController extends Controller
 
         ]);
 
-        $oldclerk = Clerk::where('phone',$request->phone)->where('verified')->first();
 
-        if($oldclerk ){
 
+        $oldclerk = Clerk::where('phone',$request->phone)->where('jop_id',$request->jop_id)->first();
+
+
+        if($oldclerk){
+            return response(trans('api.phoneexist'),422);
         }
 
         $clerk = Clerk::create([
@@ -45,10 +48,10 @@ class ClerkController extends Controller
         ]);
 
 
-        $vf_code = $this->generateOtp($clerk->phone);
+        $vf_code = $this->generateOtp($clerk->phone,$request->jop_id,$clerk->id);
 
         // if($vf_code){
-        //     $vf_msg = 'otp code has been sent to your phone';
+        $vf_msg = 'otp code has been sent to your phone';
         // }else{
         //     $vf_msg = 'no code generated';
         // }
@@ -66,9 +69,9 @@ class ClerkController extends Controller
 
     }
 
-    public function generateOtp($phone){
+    public function generateOtp($phone,$jop_id,$id){
 
-        $clerk = Clerk::where('phone',$phone)->first();
+        $clerk = Clerk::findOrFail($id);
         $code = Verfication::where('clerk_id',$clerk->id)->latest()->first();
 
         $current_time =Carbon::now();
@@ -97,7 +100,8 @@ class ClerkController extends Controller
     public function verify(Request $request){
 
         $request->validate([
-            'vf_code' => 'required|exists:verfications,otp_code'
+            'vf_code' => 'required|exists:verfications,otp_code',
+
         ]);
 
 
@@ -123,7 +127,7 @@ class ClerkController extends Controller
 
 
         }else{
-            die(404);
+            return response('not verified',422);
         }
 
 
@@ -157,6 +161,8 @@ class ClerkController extends Controller
             return response('you are not verified');
 
         }
+
+
 
         $clerk->update([
             'summury' => $request->summury,
