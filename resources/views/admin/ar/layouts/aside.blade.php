@@ -1,16 +1,16 @@
 @php
 $jops = App\Models\Jop::all();
 
-$new = App\Models\Clerk::has('detail')->has('files')->has('families')
+$new = App\Models\clerk::has('detail')->has('files')->has('families')
 ->where('status','new')
 ->where('verified',1)
 ->get();
 
-$pending = App\Models\Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','pending')->get();
+$pending = App\Models\clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','pending')->get();
 
-$rejected = App\Models\Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','rejected')->get();
+$rejected = App\Models\clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','rejected')->get();
 
-$accepted = App\Models\Clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','accepted')->get();
+$accepted = App\Models\clerk::has('detail')->has('files')->has('families')->where('verified',1)->where('status','accepted')->get();
 @endphp
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
