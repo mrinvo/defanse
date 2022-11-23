@@ -209,7 +209,7 @@ class ClerkController extends Controller
 
         $cat->delete();
     }
-        return redirect()->route('admin.clerk.index');
+        return redirect()->back();
 
 
 

@@ -223,5 +223,15 @@ class ClerkController extends Controller
 
     }
 
+    public function deletefile($id){
+        $file = File::findOrFail($id);
+        if($file){
+            $file->delete();
+            return response(trans('api.deleted'));
+        }else{
+            return response(trans('api.notfound'));
+        }
+    }
+
 
 }
