@@ -43,7 +43,7 @@ Route::group(['prefix' => 'v1' ,'middleware' => 'lang'], function () {
 
     Route::post('/clerk/storeclerk',[ClerkController::class,'storeclerk']);
     Route::post('/clerk/verify',[ClerkController::class,'verify']);
-    Route::post('/clerk/storeclerk/{id}',[ClerkController::class,'details']);
+    Route::post('/clerk/updateclerk/{id}',[ClerkController::class,'details']);
     Route::post('/clerk/file/{id}',[ClerkController::class,'file']);
     Route::post('/clerk/file/delete/{id}',[ClerkController::class,'deletefile']);
     //end clerk

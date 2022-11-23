@@ -155,14 +155,36 @@ class ClerkController extends Controller
 
         ]);
 
+
+
         $clerk = clerk::findOrFail($id);
 
         if($clerk->verified == 0){
             return response('you are not verified');
 
         }
+        $d = Detail::where('clerk_id',$id)->first();
+
+        if($d){
+            return response('you already have a request',422);
 
 
+        }
+
+$detail = Detail::where([
+    ['jop_id','=',$request->jop_id],
+    ['mil_no' , '=' ,$request->mil_no],
+])->orWhere([
+    ['jop_id','=',$request->jop_id],
+    ['id_no' , '=' ,$request->id_no],
+])->orWhere([
+    ['jop_id','=',$request->jop_id],
+    ['pass_no' , '=' ,$request->pass_no],
+])->first();
+
+if($detail){
+    return response('wrong info',422);
+}
 
         $clerk->update([
             'summury' => $request->summury,
