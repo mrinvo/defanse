@@ -55,7 +55,7 @@ $accepted = App\Models\clerk::has('detail')->has('files')->has('families')->wher
               <p>
                      الوظائف
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">{{ $jops->count }}</span>
+                <span class="badge badge-info right">{{ $jops->count() }}</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
