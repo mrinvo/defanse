@@ -171,14 +171,13 @@ class ClerkController extends Controller
 
         }
 
+
 $detail = Detail::where([
-    ['jop_id','=',$request->jop_id],
     ['mil_no' , '=' ,$request->mil_no],
 ])->orWhere([
-    ['jop_id','=',$request->jop_id],
+
     ['id_no' , '=' ,$request->id_no],
 ])->orWhere([
-    ['jop_id','=',$request->jop_id],
     ['pass_no' , '=' ,$request->pass_no],
 ])->first();
 
