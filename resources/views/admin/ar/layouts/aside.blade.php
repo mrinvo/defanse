@@ -29,7 +29,7 @@ $accepted = App\Models\clerk::has('detail')->has('files')->has('families')->wher
             {{-- <img src="/1.png" class="img-circle elevation-2" alt="User Image"> --}}
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin </a>
+          <a href="#" class="d-block">لوحة التحكم  </a>
         </div>
       </div>
 
