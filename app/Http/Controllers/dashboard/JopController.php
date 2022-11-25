@@ -63,7 +63,7 @@ class JopController extends Controller
             'name_en' => 'required|max:250'
         ]);
 
-        $jop =  Jop::findOrFail($request->id);
+        $jop =  Jop::find($request->id);
 
 
 
@@ -85,7 +85,7 @@ class JopController extends Controller
 
         $clerk = clerk::where('jop_id',$id)->get();
         if(count($clerk) > 0){
-            $message = 'بوجد موظفبن مرتبطبن بهذه الوظبفة';
+            $message = 'بوجد موظفبن مرتبطبن بهذه الوظبفة الرجاء مسح الموظفين ثم مسح الوظيفة';
             return redirect()->route('admin.jop.index')->with($message);
         }
         $cat = Jop::findOrFail($id);

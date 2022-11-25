@@ -24,8 +24,9 @@
     @endif
         <!-- /.card-header -->
         <div class="card-body">
-          <form enctype="multipart/form-data" role="form" method="POST" action="{{ route('admin.jop.store') }}">
+          <form enctype="multipart/form-data" role="form" method="POST" action="{{ route('admin.jop.update') }}">
             @csrf
+            <input type="hidden" value="{{ $jop->id }}" name="id">
             <div class="row">
               <div class="col-sm-12">
                 <!-- text input -->

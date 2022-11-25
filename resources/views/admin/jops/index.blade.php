@@ -33,7 +33,7 @@
       <td>
         <a href="{{ route('admin.jop.edit',$jop->id) }}" class="btn btn-info sm"><i class=" fas fa-edit"></i></a>
         <br>
-        {{-- <a href="{{ route('admin.jop.delete',$jop->id) }}" id="delete" class="btn btn-danger sm"><i class="fas fa-trash-alt"></i></a> --}}
+        <a href="{{ route('admin.jop.delete',$jop->id) }}" id="delete" class="btn btn-danger sm"><i class="fas fa-trash-alt"></i></a>
       </td>
     </tr>
 
