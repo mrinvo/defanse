@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('jops', function (Blueprint $table) {
             $table->id();
-            $table->string('name_en')->nullable();
-            $table->string('name_ar');
+            $table->string('name_en')->nullable()->onUpdate('cascade')->onDelete('cascade');;
+            $table->string('name_ar')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -133,7 +133,7 @@ class ClerkController extends Controller
 
     }
 
-    public function details(Request $request,$id){
+public function details(Request $request,$id){
 
         $request->validate([
             'summury' => 'required',
