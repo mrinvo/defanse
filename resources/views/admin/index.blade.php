@@ -17,12 +17,12 @@ if ( Config::get('app.locale') == 'ar'){
           <div class="inner">
             <h3>{{ $jops->count() }}</h3>
 
-            <p> الوظائف</p>
+            <p> الاقسام</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="{{ route('admin.jop.index') }}" class="small-box-footer">كل الوظائف الجديدة <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.jop.index') }}" class="small-box-footer">كل الاقسام الجديدة <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
 

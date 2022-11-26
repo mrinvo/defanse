@@ -1,6 +1,6 @@
 @extends('admin.master.masterar')
 @section('name')
-الوظائف
+الاقسام
 @endsection
 @section('content')
 <div class="row">
@@ -9,8 +9,8 @@
 
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title" style="float: right;">جميع الوظائف</h3><br/>
-          <a href="{{ route('admin.jop.create') }}" style="float: right" class="btn btn-info">اضافة وظيفة</a>
+          <h3 class="card-title" style="float: right;">جميع الاقسام</h3><br/>
+          <a href="{{ route('admin.jop.create') }}" style="float: right" class="btn btn-info">اضافة قسم</a>
         </div>
         <!-- /.card-header -->
         <div class="card-body">

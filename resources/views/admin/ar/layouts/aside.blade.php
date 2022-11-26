@@ -64,13 +64,13 @@ $accepted = App\Models\clerk::has('detail')->has('files')->has('families')->wher
               <li class="nav-item">
                 <a href="{{ route('admin.jop.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p> جميع الوظائف</p>
+                  <p> جميع الاقسام</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('admin.jop.create') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>اضافة الوظائف</p>
+                  <p>اضافة قسم</p>
                 </a>
               </li>
 
