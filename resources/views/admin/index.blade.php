@@ -25,8 +25,6 @@ if ( Config::get('app.locale') == 'ar'){
           <a href="{{ route('admin.jop.index') }}" class="small-box-footer">كل الاقسام الجديدة <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
-
-      <div class="col-lg-3 col-6">
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">

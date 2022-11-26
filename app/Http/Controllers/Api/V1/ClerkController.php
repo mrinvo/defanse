@@ -160,13 +160,20 @@ public function details(Request $request,$id){
         $clerk = clerk::findOrFail($id);
 
         if($clerk->verified == 0){
-            return response('you are not verified');
+            $response = [
+                'message' => trans('api.notverified'),
+            ];
+            return response($response,422);
 
         }
         $d = Detail::where('clerk_id',$id)->first();
 
         if($d){
-            return response('you already have a request',422);
+
+            $response = [
+                'message' => trans('api.notallowed'),
+            ];
+            return response($response,422);
 
 
         }
@@ -182,7 +189,11 @@ $detail = Detail::where([
 ])->first();
 
 if($detail){
-    return response('wrong info',422);
+
+              $response = [
+                'message' => trans('api.exists'),
+            ];
+            return response($response,422);
 }
 
         $clerk->update([
@@ -223,7 +234,10 @@ if($detail){
             ]);
         }
 
-        return response(trans('api.stored'),201);
+        $response = [
+            'message' => trans('api.stored'),
+        ];
+        return response($response,201);
     }
 
     public function file(Request $request,$id){

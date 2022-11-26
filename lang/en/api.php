@@ -25,6 +25,8 @@ return [
     'notallowed' => 'you are not allowed to do this process',
     'cartadded' => 'product added to cart',
     'phoneexist' => 'this phone applied for this job before',
+    'notverified' => 'your account is not verified',
+    'exists' => 'your informaiton already exists in our system',
 
 
 ];
